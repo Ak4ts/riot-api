@@ -10,6 +10,14 @@ class App {
   public constructor() {
     dotenv.config();
     this.express = express();
+    this.database();
+  private database(): void {
+    mongoose.connect(process.env.DATABASE).then(() => {
+      console.log("Database Connected 🚀🚀🚀");
+    }).catch((error) => {
+      console.log("Error: " + error)
+    });
+  }
   }
 }
 
