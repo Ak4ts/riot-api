@@ -12,6 +12,7 @@ class App {
     this.express = express();
     this.database();
     this.middlewares();
+    this.routes();
   }
   private database(): void {
     mongoose.connect(process.env.DATABASE).then(() => {
@@ -24,6 +25,8 @@ class App {
     this.express.use(express.json());
     this.express.use(cors());
   }
+  private routes(): void {
+    this.express.use(routes);
   }
 }
 
