@@ -8,6 +8,7 @@ class App {
   public express: express.Application;
 
   public constructor() {
+    dotenv.config();
     this.express = express();
   }
 }
