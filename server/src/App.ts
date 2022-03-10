@@ -11,12 +11,18 @@ class App {
     dotenv.config();
     this.express = express();
     this.database();
+    this.middlewares();
+  }
   private database(): void {
     mongoose.connect(process.env.DATABASE).then(() => {
       console.log("Database Connected 🚀🚀🚀");
     }).catch((error) => {
       console.log("Error: " + error)
     });
+  }
+  private middlewares(): void {
+    this.express.use(express.json());
+    this.express.use(cors());
   }
   }
 }
