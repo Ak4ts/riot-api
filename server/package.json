@@ -1,0 +1,45 @@
+{
+  "name": "riot-api-server",
+  "version": "1.0.0",
+  "description": "no description :)",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon -L src/index.ts",
+    "build": "sucrase ./src -d .dist --transform typescript,imports"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ak4ts/riot-api.git"
+  },
+  "author": "Ak4ts (Luiz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ak4ts/riot-api/issues"
+  },
+  "homepage": "https://github.com/Ak4ts/riot-api#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "nodemon": "^2.0.15",
+    "sucrase": "^3.20.3",
+    "typescript": "^4.5.5"
+  }
+}
