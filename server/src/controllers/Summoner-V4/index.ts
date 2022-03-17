@@ -8,9 +8,15 @@ class SummonerV4 {
     if(!region || !nickname) return res.status(500).json({ error: "You have to send a region and a nickname!"})
     if(!regions.includes(region)) return res.status(400).json({ error: "Region doesn't exist"})
     api.get(`https://${region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${nickname}`).then((response) => {
-      const users = new Users({
-        
-      })
+      Users.create({
+        id: response.data.id,
+        accountId: response.data.accountId,
+        puuid: response.data.puuid,
+        name: response.data.name,
+        profileIconId: response.data.profileIconId,
+        revisionDate: response.data.revisionDate,
+        summonerLevel: response.data.summonerLevel
+      });
 
       return res.status(200).json(response.data)
     }).catch(() => {
