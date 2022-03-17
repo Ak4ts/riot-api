@@ -1,8 +1,6 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model } from "mongoose";
+import { UsersInterface } from "../interfaces" 
 
-interface UsersInterface extends Document{
-
-}
 const USersSchemas = new Schema({
   id: String,
   accountId: String,
@@ -11,7 +9,6 @@ const USersSchemas = new Schema({
   profileIconId: Number,
   revisionDate: Number,
   summonerLevel: Number
-
 },{
   timestamps: true
 })
