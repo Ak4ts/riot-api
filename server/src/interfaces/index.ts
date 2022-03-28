@@ -9,3 +9,13 @@ export interface UsersInterface extends Document {
   revisionDate: Number;
   summonerLevel: Number;
 }
+
+export interface User {
+  id: String;
+  accountId: String;
+  puuid: String;
+  name: String;
+  profileIconId: Number;
+  revisionDate: Number;
+  summonerLevel: Number;
+}
