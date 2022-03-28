@@ -1,10 +1,15 @@
 import { Request, Response } from "express";
+import Users from "../../schemas/UsersSchemas";
 import { api } from "../../utils"
+import { UsersInterface } from "../../interfaces/"
 
 class ChampionMastery {
-  public async bySummoner(props: any, req: Request, res: Response) {
+  public async bySummoner( req: Request, res: Response) {
+    
+    const { summoner } = req.params
+    const user: any = await Users.findOne({ name: summoner });
 
-    await api.get(`/lol/champion-mastery/v4/champion-masteries/by-summoner/${props.id}`).then((response: any) => {
+    await api.get(`https://br1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${user.id}`).then((response: any) => {
       return res.status(200).json(response.data)
     }).catch((error: any) => {
       console.log(error)
@@ -12,3 +17,5 @@ class ChampionMastery {
     });
   }
 }
+
+export default new ChampionMastery()
