@@ -16,7 +16,7 @@ class App {
   }
   private database(): void {
     mongoose.connect(process.env.DATABASE).then(() => {
-      console.log("Database Connected 🚀🚀🚀");
+      console.log("📂📂📂 Database Connected");
     }).catch((error) => {
       console.log("Error: " + error)
     });
@@ -24,6 +24,7 @@ class App {
   private middlewares(): void {
     this.express.use(express.json());
     this.express.use(cors());
+    console.log(`🚀🚀🚀 Server Running on port ${process.env.PORT}`);
   }
   private routes(): void {
     this.express.use(routes);

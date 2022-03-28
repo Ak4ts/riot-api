@@ -4,6 +4,7 @@ declare global {
       DATABASE: string,
       API_KEY: string,
       BR1_URL: string,
+      PORT: number
     }
   }
 }
