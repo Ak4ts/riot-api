@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Users from "../../schemas/UsersSchemas";
-import { api } from "../../utils"
+import { api } from "@utils/index"
 import { User } from "../../interfaces/"
 
 class ChampionMastery {
